@@ -9,7 +9,6 @@ a{
 }
 
 a:visited{
-  color:inherit;
 }
 
 .feature{
@@ -220,14 +219,19 @@ ul, li{
 .closing{
   background: #f44242;
   background-position:top;
-  height:350px;
+  height:250px;
   overflow:hidden
 }
 
 @media only screen and (max-width: 750px) {
+    .closing{
+      height: 350px;
+    }
+
     .description{
       margin-top:0px;
     }
+
     .feature{
       padding-top:20px;
     }
@@ -251,6 +255,7 @@ ul, li{
     .footer{
       flex-direction:column;
       width:220px;
+      box-sizing:content-box;
     }
 
     .footer a{
