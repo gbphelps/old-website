@@ -1,3 +1,7 @@
+
+
+/*////////////////////////*/
+
 *{
   box-sizing: border-box;
 }
@@ -268,4 +272,29 @@ ul, li{
       top:0px;
       margin:auto;
     }
+}
+
+
+
+/*//////////////////////*/
+.l17{
+  border:none;
+  margin-top:0px;
+}
+
+.l19{
+  width:300px;
+}
+
+.l47{
+  padding:20px;
+}
+
+.l106{
+  border:none;
+  margin-top:0px
+}
+
+.three{
+  width: 300px;
 }
