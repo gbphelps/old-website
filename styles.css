@@ -75,6 +75,10 @@ body{
   background-color: black;
 }
 
+.chess{
+  background-image: url('./images/chesspieces.jpg')
+}
+
 .noteworthy{
   background: #2dbe60;
 }
@@ -89,7 +93,7 @@ body{
 
 /*/////////////////////////////*/
 
-.noteworthy, .chess{
+.noteworthy{
   width: calc(100vw - 40px);
 }
 .screenshot-holder{
@@ -161,9 +165,6 @@ h1{
   margin-bottom:10px;
 }
 
-.chess{
-  background: #f44242
-}
 
 
 
