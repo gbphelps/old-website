@@ -223,6 +223,7 @@ ul, li{
   overflow:hidden
 }
 
+
 @media only screen and (max-width: 750px) {
     .closing{
       height: 350px;
