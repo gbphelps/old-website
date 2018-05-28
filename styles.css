@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+
+a{
+  text-decoration:none;
+  display:block;
+}
+
+a:visited{
+  color:inherit;
+}
+
 .feature{
   box-sizing: content-box;
 }
@@ -46,6 +56,7 @@ body{
 .headshot img{
   height:300px;
   border-radius:300px;
+  border: 5px solid white;
 }
 
 .headshot{
@@ -100,6 +111,10 @@ body{
 
 .screenshot{
   margin-left: 20px;
+}
+.bottom{
+  position:absolute;
+  bottom:0px;
 }
 
 img{
