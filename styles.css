@@ -1,0 +1,187 @@
+*{
+  box-sizing: border-box;
+}
+
+.feature{
+  box-sizing: content-box;
+}
+
+.feature{
+  width:100%;
+  background:white;
+}
+
+.html{margin:none;}
+
+html{
+  padding:0;
+  margin:0;
+}
+
+body{
+  padding:0;
+  margin:0;
+}
+
+.feature{
+  height: 700px;
+  position:relative;
+}
+
+.full{
+  background-size: fill;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.next{
+  width:100%;
+  background:white;
+}
+
+
+.dramamine{
+  background-image: url('./images/dramamine.png');
+  background-color: #7ec0ee;
+}
+
+.perlin{
+  background-image: url('./images/Perlin.png');
+  background-color: black;
+}
+
+.noteworthy{
+  background: #2dbe60;
+}
+
+
+.pane{
+  width: 380px;
+  height:100%;
+  position: absolute;
+}
+
+
+/*/////////////////////////////*/
+
+.noteworthy, .chess{
+  width: calc(100vw - 40px);
+}
+.screenshot-holder{
+  margin:0;
+  width:100%;
+  position:sticky;
+  top: 20px;
+  display:flex;
+}
+
+.screenshot-holder .description{
+  position:inherit;
+  width:340px;
+  margin: 0 auto;
+  flex-shrink:0;
+  height:430px;
+}
+
+.screenshot{
+  height:600px;
+  width:100%;
+  float:left;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.nw{
+  background-image:url('./images/noteWorthy.png');
+}
+
+.ch{
+  background-image:url('./images/consoleChess.png');
+}
+/*/////////////////////////////*/
+
+.right{
+  position:absolute;
+  right:0px;
+}
+
+.description{
+  position:sticky;
+  top:20px;
+  border: 1px solid white;
+  border-radius: 3px;
+  color:white;
+  margin: 20px;
+  font-family: 'Fira Sans';
+  padding: 10px;
+  font-size: 20px;
+  text-align:justify;
+}
+
+
+h1{
+  font-family: 'Open Sans';
+  padding: 0;
+  margin: 0;
+  text-align:center;
+  font-size:35px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.chess{
+  background: #f44242
+}
+
+
+
+
+.button{
+  font-family: 'Open Sans';
+  background:white;
+  color:#7ec0ee;
+  width: 200px;
+  text-align: center;
+  padding:10px;
+  margin:auto;
+  text-transform:uppercase;
+  border-radius:4px;
+}
+
+.line{
+  width: 200px;
+  height: 1px;
+  border-bottom: 1px solid white;
+  margin:auto;
+}
+
+
+
+
+
+
+ul, li{
+  list-style: none;
+  padding: 0;
+}
+
+
+@media only screen and (max-width: 750px) {
+    .description{
+      margin-top:0px;
+    }
+    .feature{
+      padding-top:20px;
+    }
+
+    .screenshot{
+      display:none;
+    }
+
+    .pane {
+      position:relative;
+      top:0px;
+      margin:auto;
+    }
+}
