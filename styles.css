@@ -40,7 +40,7 @@ ul, li{
   position:relative;
 }
 
-.center { text-align:center; }
+.center { text-align:center }
 
 
 .dramamine .button { color:#7ec0ee }
@@ -71,14 +71,13 @@ ul, li{
   margin:auto;
 }
 
-
 .footer .button{
   margin:10px auto;
   color: #f44242
 }
 
-.intro, .closing { height: auto}
-.closing .description, .intro .description { border: none; }
+
+
 
 
 .full{
@@ -87,6 +86,31 @@ ul, li{
   background-attachment: fixed;
   background-position: center;
 }
+
+
+.dramamine{
+  background-image: url('./images/dramamine.png');
+  background-color: #7ec0ee;
+}
+
+
+.perlin{
+  background-image: url('./images/Perlin.png');
+  background-color: black;
+}
+
+.noteworthy{
+  background: #2dbe60;
+}
+
+.chess{
+  background-image: url('./images/chesspieces.jpg');
+  background-size:cover;
+}
+
+
+
+
 
 
 /*////////////////////////////////////*/
@@ -113,26 +137,6 @@ ul, li{
 }
 
 
-.dramamine{
-  background-image: url('./images/dramamine.png');
-  background-color: #7ec0ee;
-}
-
-
-.perlin{
-  background-image: url('./images/Perlin.png');
-  background-color: black;
-}
-
-.chess{
-  background-image: url('./images/chesspieces.jpg')
-}
-
-.noteworthy{
-  background: #2dbe60;
-}
-
-
 .pane{
   width: 380px;
   height:100%;
@@ -145,14 +149,7 @@ ul, li{
 .noteworthy{
   width: 100%;
 }
-.screenshot-holder{
-  margin:0;
-  width:100%;
-  position:sticky;
-  top: 20px;
-  display:flex;
-  justify-content:flex-start;
-}
+
 
 .screenshot-holder .description{
   position:inherit;
@@ -162,27 +159,12 @@ ul, li{
   height:430px;
 }
 
-.screenshot{
-  margin-left: 20px;
-}
-.bottom{
-  position:absolute;
-  bottom:0px;
-}
-
 img{
   height:auto;
   max-width:100%;
   border-radius:6px;
 }
 
-.nw{
-  background-image:url('./images/noteWorthy.png');
-}
-
-.ch{
-  background-image:url('./images/consoleChess.png');
-}
 /*/////////////////////////////*/
 
 .right{
@@ -221,32 +203,9 @@ h1{
   max-width: 700px;
   margin:auto;
 }
-
+}
 
 @media only screen and (max-width: 750px) and (min-width:420px) {
-    .closing{
-      height: 350px;
-    }
-
-    .description{
-      margin-top:0px;
-    }
-
-    .feature{
-      padding-top:20px;
-    }
-
-    .screenshot{
-      display:none;
-    }
-
-    .screenshot-holder .description{
-      margin: 0 auto;
-    }
-
-    .screenshot-holder {
-      flex-direction:column;
-    }
 
     .footer{
       flex-direction:column;
@@ -263,11 +222,13 @@ h1{
       margin:auto;
     }
 
-    .intro {
-      height:800px;
-    }
+    /* .intro {
+      height:670px;
+    } */
 }
 
-}
+
 
 .closing, .intro { background: #f44242; }
+.intro, .closing { height: auto}
+.closing .description, .intro .description { border: none; position:relative; top:0px }

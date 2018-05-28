@@ -48,25 +48,7 @@
 
 
 
-.dramamine{
-  background-image: url('./images/dramamine.png');
-  background-color: #7ec0ee;
-}
 
-
-.perlin{
-  background-image: url('./images/Perlin.png');
-  background-color: black;
-}
-
-.noteworthy{
-  background: #2dbe60;
-}
-
-.chess{
-  background-image: url('./images/chesspieces.jpg');
-  background-size:cover;
-}
 
 
 }
