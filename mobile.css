@@ -1,36 +1,6 @@
 @media (max-width: 420px){
 
-body{
-  font-family:'Fira Sans';
-  padding:0;
-  margin:0
-}
-html{
-  padding:0;
-  margin:0
-}
-a{
-  text-decoration:none;
-  display:block
-}
-p{ text-align:justify; }
-img{ width:100%; }
-*{ box-sizing: border-box; }
 
-h1{
-  margin:0;
-  padding:0;
-  font-family:'Open Sans';
-  text-transform:uppercase;
-  text-align:center;
-  margin-bottom:10px;
-  font-size: 31px;
-}
-
-ul, li{
-  list-style: none;
-  padding: 0;
-}
 
 /*//////////////////////*/
 
@@ -38,15 +8,8 @@ ul, li{
   position:relative;
   top:0px;
   margin:auto;
-  height:700px;
+  height:100%;
   padding:20px;
-}
-
-.line{
-  width: 200px;
-  height: 1px;
-  border-bottom: 1px solid white;
-  margin:auto;
 }
 
 .description{
@@ -60,20 +23,7 @@ ul, li{
   text-align:justify;
 }
 
-.button{
-  width: 200px;
-  background:white;
-  font-family: 'Open Sans';
-  margin:auto;
 
-  color:black;
-  text-align: center;
-  padding:10px;
-
-  text-transform:uppercase;
-  border-radius:4px;
-  cursor: pointer;
-}
 
 /*//////////////////////*/
 
@@ -84,28 +34,19 @@ ul, li{
   margin:auto;
 }
 
-.footer .button{
-  margin:10px auto;
-  color: #f44242
-}
+
 
 /*//////////////////////*/
 
 .screenshot { display:none; }
 
-.closing, .intro { background: #f44242; }
-.closing .description, .intro .description { border: none; }
 
-.center { text-align:center; }
+
+
 
 /*//////////////////////*/
 
-.full{
-  background-size: fill;
-  background-repeat:no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
+
 
 .dramamine{
   background-image: url('./images/dramamine.png');
@@ -127,8 +68,5 @@ ul, li{
   background-size:cover;
 }
 
-.dramamine .button { color:#7ec0ee }
-.chess .button { color: #c9c3c3 }
-.perlin .button { color: black }
-.noteworthy .button { color: #2dbe60; }
+
 }
