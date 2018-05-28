@@ -35,9 +35,22 @@ body{
   background-position: center;
 }
 
-.next{
+.intro{
   width:100%;
-  background:white;
+  background: #f44242;
+  position:relative;
+  padding-top: 20px;
+  height:520px;
+}
+
+.headshot img{
+  height:300px;
+  border-radius:300px;
+}
+
+.headshot{
+  width:300px;
+  margin:auto;
 }
 
 
@@ -74,22 +87,25 @@ body{
   position:sticky;
   top: 20px;
   display:flex;
+  justify-content:flex-start;
 }
 
 .screenshot-holder .description{
   position:inherit;
   width:340px;
-  margin: 0 auto;
+  margin: 0;
   flex-shrink:0;
   height:430px;
 }
 
 .screenshot{
-  height:600px;
-  width:100%;
-  float:left;
-  border-radius: 5px;
   margin-left: 20px;
+}
+
+img{
+  height:auto;
+  max-width:100%;
+  border-radius:6px;
 }
 
 .nw{
@@ -147,6 +163,8 @@ h1{
   margin:auto;
   text-transform:uppercase;
   border-radius:4px;
+  cursor: pointer;
+  flex-shrink:0;
 }
 
 .line{
@@ -157,13 +175,29 @@ h1{
 }
 
 
-
-
+.center{
+  text-align:center;
+}
 
 
 ul, li{
   list-style: none;
   padding: 0;
+}
+
+.shading{
+  height:100%;
+  width:100%;
+  background:black;
+  position:absolute;
+  opacity:.5;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  max-width: 700px;
+  margin:auto;
 }
 
 
@@ -175,8 +209,29 @@ ul, li{
       padding-top:20px;
     }
 
+    .intro{
+      height:700px;
+    }
+
     .screenshot{
       display:none;
+    }
+
+    .screenshot-holder .description{
+      margin: 0 auto;
+    }
+
+    .screenshot-holder {
+      flex-direction:column;
+    }
+
+    .footer{
+      flex-direction:column;
+      width:220px;
+    }
+
+    .footer div{
+      margin: 10px;
     }
 
     .pane {
