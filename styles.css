@@ -24,6 +24,7 @@ body{
   margin:0;
   height:100%;
 }
+
 html{
   height:100%;
   padding:0;
@@ -57,7 +58,9 @@ ul, li{
 .pane{
   padding:20px;
   height: 100%;
+  display:flex;
 }
+
 
 .feature{
   height: 100%;
@@ -179,8 +182,10 @@ ul, li{
 
 
 .description{
+  align-self:flex-end;
   position:sticky;
-  top:20px;
+  bottom:20px;
+
   border: 1px solid white;
   border-radius: 3px;
   color:white;
