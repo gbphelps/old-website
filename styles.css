@@ -32,18 +32,23 @@ header{
 }
 
 
-
-
 body{
   font-family:'Fira Sans';
   padding:0;
   margin:0;
-  height:100%;
   background:#f44242;
+  overflow:hidden;
+}
+
+
+html{overflow:hidden;}
+body{overflow:auto;}
+html,body{
+  height:100%;
+  width:100%;
 }
 
 html{
-  height:100%;
   padding:0;
   margin:0;
   min-width:322px;
