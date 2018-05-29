@@ -36,12 +36,11 @@ body{
   font-family:'Fira Sans';
   padding:0;
   margin:0;
-  background:#f44242;
+  background:white;
 }
 
 
-html{overflow:hidden;}
-body{overflow:auto;}
+
 html,body{
   height:100%;
   width:100%;
