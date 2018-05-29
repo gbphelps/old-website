@@ -93,6 +93,7 @@ ul, li{
 
 .mobile{
   background-attachment:scroll;
+  height: 800px;
   background-size: auto 100%;
 }
 
