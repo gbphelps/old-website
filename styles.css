@@ -16,13 +16,7 @@ header{
 }
 }
 /*//////////////////////////*/
-.up{
-  transform:skewY(10deg)
-}
 
-.down{
-  transform:skewY(-10deg)
-}
 
 .description{
   align-self:flex-end;
@@ -83,11 +77,25 @@ ul, li{
   display:flex;
 }
 
-
+/*/////////////////////////*/
 .feature{
   height: 100%;
   position:relative;
 }
+
+.full{
+  background-size: fill;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.mobile{
+  background-attachment:scroll;
+  background-size: auto 100%;
+}
+/*/////////////////////////*/
+
 
 .center { text-align:center }
 
@@ -134,12 +142,7 @@ ul, li{
 
 
 
-.full{
-  background-size: fill;
-  background-repeat:no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
+
 
 
 .dramamine{
