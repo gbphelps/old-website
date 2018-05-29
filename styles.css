@@ -20,6 +20,7 @@ header{
 
 .description{
   align-self:flex-end;
+  position: -webkit-sticky;
   position:sticky;
   bottom:20px;
   border: 1px solid white;
@@ -94,6 +95,8 @@ ul, li{
   background-attachment:scroll;
   background-size: auto 100%;
 }
+
+
 /*/////////////////////////*/
 
 
