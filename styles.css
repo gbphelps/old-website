@@ -257,6 +257,6 @@ h1{
 
 
 
-.closing, .intro { background: #f44242; z-index:-1}
+.closing, .intro { background: #f44242; z-index:1}
 .intro, .closing { height: auto}
 .closing .description, .intro .description { border: none; position:relative; top:0px }

@@ -67,7 +67,7 @@ export const Root = () => {
         title='simul8r'
         button={{
           text: 'Generate!',
-          url: '#'
+          url: 'http://www.grant-phelps.com/SIMUL8R/'
         }}
         body='SIMUL8R is an interactive particle simulation in HTML5 Canvas.
         Perlin noise maps a grid of random force vectors onto a coordinate
