@@ -17,7 +17,6 @@ export const Root = () => {
           <div className='line'></div>
           <p className='center'>Creative Software Engineer</p>
           <div>
-            <div className='button' style={{width:'100px',color:'#f44242'}}>About</div>
             <div className='footer'>
               <a href='https://github.com/gbphelps' className="button">Github</a>
               <a href='https://www.linkedin.com/in/gbphelps/' className="button">LinkedIn</a>
