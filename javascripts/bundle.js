@@ -941,11 +941,6 @@ var Root = exports.Root = function Root() {
             null,
             _react2.default.createElement(
               'div',
-              { className: 'button', style: { width: '100px', color: '#f44242' } },
-              'About'
-            ),
-            _react2.default.createElement(
-              'div',
               { className: 'footer' },
               _react2.default.createElement(
                 'a',
@@ -1051,6 +1046,8 @@ var Root = exports.Root = function Root() {
     )
   );
 };
+
+// <div className='button' style={{width:'100px',color:'#f44242'}}>About</div>
 
 /***/ }),
 /* 14 */
