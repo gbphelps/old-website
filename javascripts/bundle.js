@@ -957,6 +957,11 @@ var Root = exports.Root = function Root() {
                 { href: './images/Resume.pdf', className: 'button' },
                 'Resume'
               )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'center' },
+              'gbphelps@aya.yale.edu'
             )
           )
         )

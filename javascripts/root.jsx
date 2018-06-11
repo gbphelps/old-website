@@ -23,6 +23,7 @@ export const Root = () => {
               <a href='https://www.linkedin.com/in/gbphelps/' className="button">LinkedIn</a>
               <a href='./images/Resume.pdf' className="button">Resume</a>
             </div>
+              <p className='center'>gbphelps@aya.yale.edu</p>
           </div>
         </header>
 
