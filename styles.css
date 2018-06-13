@@ -165,8 +165,7 @@ ul, li{
 }
 
 .noteworthy{
-  /* background-image: url('./images/nworthy.png'); */
-  background:gray;
+  background-image: url('./images/nworthy.png');
   background-size: cover;
 }
 
