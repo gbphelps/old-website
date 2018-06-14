@@ -985,7 +985,7 @@ var Root = exports.Root = function Root() {
         text: 'Go to site',
         url: 'http://note-worthy.herokuapp.com/'
       },
-      body: 'Noteworthy is a personal planner and time management app modeled after Evernote. Rich text editing is provided with the Quill.js library, and all formatting is persisted to the database with json objects. The site uses AWS to host user- uploaded images, which are fetched and re-inserted into the body of each note upon retrieval from the database.'
+      body: 'Noteworthy is a personal planner and note-taking app modeled after Evernote. Rich text editing is provided with the Quill.js library, and all formatting is persisted to the database with json objects. The site uses AWS to host user- uploaded images, which are fetched and inserted into the body of each note upon retrieval from the database.'
     }),
     _react2.default.createElement(_feature2.default, {
       feature: 'perlin',
@@ -995,7 +995,7 @@ var Root = exports.Root = function Root() {
         text: 'Generate!',
         url: 'http://www.grant-phelps.com/SIMUL8R/'
       },
-      body: 'SIMUL8R is an interactive particle simulation in HTML5 Canvas. Perlin noise maps a grid of random force vectors onto a coordinate system and calculates acceleration with bilinear interpolation. This model can plot over 2,000 particles in real time.'
+      body: 'SIMUL8R is an interactive particle simulation in HTML5 Canvas. Using Perlin noise, a mesh of random force vectors is mapped onto a 2D plane, and instantaneous force is calculated using a weighted four-way averaging technique called bilinear interpolation. This model can plot over 2,000 particles in real time.'
     }),
     _react2.default.createElement(_feature2.default, {
       feature: 'chess',
