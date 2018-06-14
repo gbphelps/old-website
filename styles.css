@@ -126,7 +126,7 @@ ul, li{
 .dramamine .button { color:#7ec0ee }
 .chess .button { color: #c9c3c3 }
 .perlin .button { color: black }
-.noteworthy .button { color: #2dbe60;}
+.noteworthy .button { color: #2dbe60; background:white}
 
 
 .line{
@@ -168,11 +168,6 @@ ul, li{
   background-image: url('./images/nworthy.png');
   background-size: cover;
 }
-
-.noteworthy .pane{
-  background:#2dbe60;
-}
-
 
 .chess{
   background-image: url('./images/chesspieces.jpg');

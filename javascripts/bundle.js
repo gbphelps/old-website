@@ -2631,20 +2631,24 @@ var Feature = function (_React$Component) {
             'div',
             { className: 'description' },
             _react2.default.createElement(
-              'h1',
-              null,
-              this.props.title
-            ),
-            _react2.default.createElement('div', { className: 'line' }),
-            _react2.default.createElement(
-              'p',
-              null,
-              this.props.body
-            ),
-            _react2.default.createElement(
-              'a',
-              { href: this.props.button.url, className: 'button' },
-              this.props.button.text
+              'div',
+              { className: 'description-inner' },
+              _react2.default.createElement(
+                'h1',
+                null,
+                this.props.title
+              ),
+              _react2.default.createElement('div', { className: 'line' }),
+              _react2.default.createElement(
+                'p',
+                null,
+                this.props.body
+              ),
+              _react2.default.createElement(
+                'a',
+                { href: this.props.button.url, className: 'button' },
+                this.props.button.text
+              )
             )
           )
         )

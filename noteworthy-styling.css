@@ -1,0 +1,17 @@
+.noteworthy .pane{
+  padding:0;
+}
+
+
+.noteworthy .description{
+  background: #2dbe60;
+  bottom:0;
+  padding: 20px;
+  border:none;
+  border-radius: 0;
+}
+
+.noteworthy .description-inner{
+  border: 1px solid white;
+  padding:10px;
+}
