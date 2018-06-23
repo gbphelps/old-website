@@ -22,14 +22,34 @@ header{
   align-self:flex-end;
   position: -webkit-sticky;
   position:sticky;
-  bottom:20px;
-  border: 1px solid white;
-  border-radius: 3px;
+  bottom:0px;
+  border: none;
+  border-radius: 0;
   color:white;
-  padding: 10px;
+  padding: 20px;
   font-size: 16px;
   text-align:justify;
 }
+
+.noteworthy .description{
+  background: #2dbe60;
+}
+
+.description-inner{
+  border: 1px solid white;
+  padding:10px;
+  border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 body{
@@ -78,7 +98,7 @@ ul, li{
 
 
 .pane{
-  padding:20px;
+  padding:0;
   height: 100%;
   display:flex;
 }
