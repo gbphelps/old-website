@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,9 +261,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
-} else {
   module.exports = __webpack_require__(15);
+} else {
+  module.exports = __webpack_require__(16);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -577,7 +577,7 @@ module.exports = warning;
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(2);
   var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(16);
+  var ReactPropTypesSecret = __webpack_require__(17);
   var loggedTypeFailures = {};
 }
 
@@ -632,6 +632,35 @@ module.exports = checkPropTypes;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Link = undefined;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = exports.Link = function Link(_ref) {
+  var url = _ref.url,
+      text = _ref.text;
+  return _react2.default.createElement(
+    'a',
+    { href: url, className: 'button', style: { width: 200 } },
+    text,
+    _react2.default.createElement('div', { className: 'hoverline' })
+  );
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -667,7 +696,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -709,7 +738,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -780,7 +809,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -795,7 +824,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(20);
+var isTextNode = __webpack_require__(21);
 
 /*eslint-disable no-bitwise */
 
@@ -823,24 +852,42 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _root = __webpack_require__(13);
+var _root = __webpack_require__(14);
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(18);
+var _reactDom = __webpack_require__(19);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var y = 0;
+window.addEventListener('scroll', function () {
+  Array.from(document.getElementsByClassName('feature')).forEach(function (feature) {
+
+    var top = feature.getBoundingClientRect().top;
+    var bottom = feature.getBoundingClientRect().bottom;
+    var margin = (window.innerHeight - 400) / 2;
+
+    var targetTop = margin;
+    var targetBottom = window.innerHeight - margin;
+
+    if (top < targetTop - 50 && bottom > targetBottom) {
+      feature.classList.add('focus');
+    } else {
+      feature.classList.remove('focus');
+    }
+  });
+});
 // let y = 0;
 // let pointer;
 // window.addEventListener('scroll', ()=>{
@@ -886,7 +933,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -901,9 +948,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _feature = __webpack_require__(17);
+var _feature = __webpack_require__(18);
 
 var _feature2 = _interopRequireDefault(_feature);
+
+var _link = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -916,12 +965,12 @@ var Root = exports.Root = function Root() {
       { className: 'intro' },
       _react2.default.createElement(
         'div',
-        { className: 'headshot' },
+        { style: { paddingTop: 30 }, className: 'headshot' },
         _react2.default.createElement('img', { src: './images/headshot.jpg' })
       ),
       _react2.default.createElement(
         'div',
-        { className: 'description' },
+        { className: 'content' },
         _react2.default.createElement(
           'header',
           null,
@@ -932,37 +981,25 @@ var Root = exports.Root = function Root() {
           ),
           _react2.default.createElement('div', { className: 'line' }),
           _react2.default.createElement(
-            'p',
-            { className: 'center' },
-            'Creative Software Engineer'
-          ),
-          _react2.default.createElement(
             'div',
             null,
             _react2.default.createElement(
               'div',
               { className: 'footer' },
-              _react2.default.createElement(
-                'a',
-                { href: 'https://github.com/gbphelps', className: 'button' },
-                'Github'
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: 'https://www.linkedin.com/in/gbphelps/', className: 'button' },
-                'LinkedIn'
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: './images/Resume.pdf', className: 'button' },
-                'Resume'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'center' },
-              'gbphelps@aya.yale.edu'
+              _react2.default.createElement(_link.Link, { url: 'https://github.com/gbphelps', text: 'Github' }),
+              _react2.default.createElement(_link.Link, { url: 'https://www.linkedin.com/in/gbphelps/', text: 'LinkedIn' }),
+              _react2.default.createElement(_link.Link, { url: './images/Resume.pdf', text: 'Resume' })
             )
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'center' },
+            'Creative Software Engineer'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { margin: 0 }, className: 'center' },
+            'gbphelps@aya.yale.edu'
           )
         )
       )
@@ -1012,10 +1049,10 @@ var Root = exports.Root = function Root() {
       { className: 'closing' },
       _react2.default.createElement(
         'div',
-        { className: 'description' },
+        { className: 'content' },
         _react2.default.createElement(
           'h1',
-          null,
+          { style: { padding: '30px 0 20px 0' } },
           'Get to know me'
         ),
         _react2.default.createElement('div', { className: 'line three' }),
@@ -1025,25 +1062,13 @@ var Root = exports.Root = function Root() {
           _react2.default.createElement(
             'div',
             { className: 'footer' },
-            _react2.default.createElement(
-              'a',
-              { href: 'https://github.com/gbphelps', className: 'button' },
-              'Github'
-            ),
-            _react2.default.createElement(
-              'a',
-              { href: 'https://www.linkedin.com/in/gbphelps/', className: 'button' },
-              'LinkedIn'
-            ),
-            _react2.default.createElement(
-              'a',
-              { href: 'https://codepen.io/gbphelps/', className: 'button' },
-              'Codepen'
-            )
+            _react2.default.createElement(_link.Link, { url: 'https://github.com/gbphelps', text: 'Github' }),
+            _react2.default.createElement(_link.Link, { url: 'https://www.linkedin.com/in/gbphelps/', text: 'LinkedIn' }),
+            _react2.default.createElement(_link.Link, { url: 'https://codepen.io/gbphelps/', text: 'Codepen' })
           ),
           _react2.default.createElement(
             'p',
-            { className: 'center' },
+            { style: { paddingBottom: 20 }, className: 'center' },
             '\xA9 Grant Phelps'
           )
         )
@@ -1055,7 +1080,7 @@ var Root = exports.Root = function Root() {
 // <div className='button' style={{width:'100px',color:'#f44242'}}>About</div>
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1084,7 +1109,7 @@ assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default?Z.default:Z;
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2566,7 +2591,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2585,7 +2610,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2601,6 +2626,8 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _link = __webpack_require__(8);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2615,42 +2642,42 @@ var Feature = function (_React$Component) {
   function Feature(props) {
     _classCallCheck(this, Feature);
 
-    return _possibleConstructorReturn(this, (Feature.__proto__ || Object.getPrototypeOf(Feature)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Feature.__proto__ || Object.getPrototypeOf(Feature)).call(this, props));
+
+    _this.state = {
+      minimize: true
+    };
+    _this.minimize = _this.minimize.bind(_this);
+    return _this;
   }
 
   _createClass(Feature, [{
+    key: 'minimize',
+    value: function minimize() {
+      document.getElementsByClassName(this.props.feature)[0].classList.remove('focus');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
         { className: 'feature ' + this.props.feature },
+        _react2.default.createElement('div', { className: 'screen' }),
         _react2.default.createElement(
           'div',
-          { className: 'pane ' + this.props.side },
+          { className: 'description' },
           _react2.default.createElement(
-            'div',
-            { className: 'description' },
-            _react2.default.createElement(
-              'div',
-              { className: 'description-inner' },
-              _react2.default.createElement(
-                'h1',
-                null,
-                this.props.title
-              ),
-              _react2.default.createElement('div', { className: 'line' }),
-              _react2.default.createElement(
-                'p',
-                null,
-                this.props.body
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: this.props.button.url, className: 'button' },
-                this.props.button.text
-              )
-            )
-          )
+            'h1',
+            null,
+            this.props.title
+          ),
+          _react2.default.createElement('div', { className: 'line' }),
+          _react2.default.createElement(
+            'p',
+            { className: 'description-body' },
+            this.props.body
+          ),
+          _react2.default.createElement(_link.Link, { url: this.props.button.url, text: this.props.button.text })
         )
       );
     }
@@ -2659,10 +2686,13 @@ var Feature = function (_React$Component) {
   return Feature;
 }(_react2.default.Component);
 
+//<span onClick={this.minimize}>&#215;</span>
+
+
 exports.default = Feature;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2700,15 +2730,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(20);
 } else {
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(23);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2724,7 +2754,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2),ca=__webpack_require__(1),m=__webpack_require__(8),p=__webpack_require__(4),v=__webpack_require__(3),da=__webpack_require__(9),ea=__webpack_require__(10),fa=__webpack_require__(11),ha=__webpack_require__(5);
+var aa=__webpack_require__(2),ca=__webpack_require__(1),m=__webpack_require__(9),p=__webpack_require__(4),v=__webpack_require__(3),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ha=__webpack_require__(5);
 function A(a){for(var b=arguments.length-1,c="https://reactjs.org/docs/error-decoder.html?invariant="+a,d=0;d<b;d++)c+="&args[]="+encodeURIComponent(arguments[d+1]);aa(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",c)}ca?void 0:A("227");
 function ia(a,b,c,d,e,f,g,h,k){this._hasCaughtError=!1;this._caughtError=null;var n=Array.prototype.slice.call(arguments,3);try{b.apply(c,n)}catch(r){this._caughtError=r,this._hasCaughtError=!0}}
 var B={_caughtError:null,_hasCaughtError:!1,_rethrowError:null,_hasRethrowError:!1,invokeGuardedCallback:function(a,b,c,d,e,f,g,h,k){ia.apply(B,arguments)},invokeGuardedCallbackAndCatchFirstError:function(a,b,c,d,e,f,g,h,k){B.invokeGuardedCallback.apply(this,arguments);if(B.hasCaughtError()){var n=B.clearCaughtError();B._hasRethrowError||(B._hasRethrowError=!0,B._rethrowError=n)}},rethrowCaughtError:function(){return ka.apply(B,arguments)},hasCaughtError:function(){return B._hasCaughtError},clearCaughtError:function(){if(B._hasCaughtError){var a=
@@ -2953,7 +2983,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2968,7 +2998,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
  * @typechecks
  */
 
-var isNode = __webpack_require__(21);
+var isNode = __webpack_require__(22);
 
 /**
  * @param {*} object The object to check.
@@ -2981,7 +3011,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3009,7 +3039,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3033,16 +3063,16 @@ if (process.env.NODE_ENV !== "production") {
 var invariant = __webpack_require__(2);
 var React = __webpack_require__(1);
 var warning = __webpack_require__(6);
-var ExecutionEnvironment = __webpack_require__(8);
+var ExecutionEnvironment = __webpack_require__(9);
 var _assign = __webpack_require__(4);
 var emptyFunction = __webpack_require__(3);
 var checkPropTypes = __webpack_require__(7);
-var getActiveElement = __webpack_require__(9);
-var shallowEqual = __webpack_require__(10);
-var containsNode = __webpack_require__(11);
+var getActiveElement = __webpack_require__(10);
+var shallowEqual = __webpack_require__(11);
+var containsNode = __webpack_require__(12);
 var emptyObject = __webpack_require__(5);
-var hyphenateStyleName = __webpack_require__(23);
-var camelizeStyleName = __webpack_require__(25);
+var hyphenateStyleName = __webpack_require__(24);
+var camelizeStyleName = __webpack_require__(26);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -20323,7 +20353,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20338,7 +20368,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(24);
+var hyphenate = __webpack_require__(25);
 
 var msPattern = /^ms-/;
 
@@ -20365,7 +20395,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20401,7 +20431,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20416,7 +20446,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(26);
+var camelize = __webpack_require__(27);
 
 var msPattern = /^-ms-/;
 
@@ -20444,7 +20474,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -2,6 +2,26 @@ import { Root } from './root.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+
+let y = 0;
+window.addEventListener('scroll', ()=>{
+  Array.from(document.getElementsByClassName('feature')).forEach(feature=>{
+
+    const top = feature.getBoundingClientRect().top;
+    const bottom = feature.getBoundingClientRect().bottom;
+    const margin = (window.innerHeight - 400)/2;
+
+    const targetTop = margin;
+    const targetBottom = window.innerHeight - margin;
+
+    if (top < targetTop - 50 && bottom > targetBottom ){
+      feature.classList.add('focus');
+    }else{
+      feature.classList.remove('focus');
+    }
+  });
+})
 // let y = 0;
 // let pointer;
 // window.addEventListener('scroll', ()=>{

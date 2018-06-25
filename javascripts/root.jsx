@@ -1,5 +1,6 @@
 import React from 'react';
-import Feature from './components/feature'
+import Feature from './components/feature';
+import { Link } from './components/link';
 
 export const Root = () => {
   return (
@@ -8,23 +9,27 @@ export const Root = () => {
 
 
       <div className='intro'>
-        <div className='headshot'><img src='./images/headshot.jpg'></img></div>
+        <div style={{paddingTop:30}} className='headshot'><img src='./images/headshot.jpg'></img></div>
 
-        <div className='description'>
+        <div className='content'>
 
         <header>
           <h1 className='name'>Grant Phelps</h1>
           <div className='line'></div>
-          <p className='center'>Creative Software Engineer</p>
+
           <div>
 
             <div className='footer'>
-              <a href='https://github.com/gbphelps' className="button">Github</a>
-              <a href='https://www.linkedin.com/in/gbphelps/' className="button">LinkedIn</a>
-              <a href='./images/Resume.pdf' className="button">Resume</a>
+              <Link url='https://github.com/gbphelps' text='Github'/>
+              <Link url='https://www.linkedin.com/in/gbphelps/' text='LinkedIn'/>
+              <Link url='./images/Resume.pdf' text='Resume'/>
             </div>
-              <p className='center'>gbphelps@aya.yale.edu</p>
+
           </div>
+
+          <p className='center'>Creative Software Engineer</p>
+          <p style={{margin:0}} className='center'>gbphelps@aya.yale.edu</p>
+
         </header>
 
         </div>
@@ -92,16 +97,16 @@ export const Root = () => {
 
 
       <div className='closing'>
-        <div className='description'>
-        <h1>Get to know me</h1>
+        <div className='content'>
+        <h1 style={{padding:'30px 0 20px 0'}}>Get to know me</h1>
         <div className='line three'></div>
         <div>
           <div className='footer'>
-            <a href='https://github.com/gbphelps' className="button">Github</a>
-            <a href='https://www.linkedin.com/in/gbphelps/' className="button">LinkedIn</a>
-            <a href='https://codepen.io/gbphelps/' className="button">Codepen</a>
+            <Link url='https://github.com/gbphelps' text='Github'/>
+            <Link url='https://www.linkedin.com/in/gbphelps/' text='LinkedIn'/>
+            <Link url='https://codepen.io/gbphelps/' text='Codepen'/>
           </div>
-          <p className='center'>&#xa9; Grant Phelps</p>
+          <p style={{paddingBottom: 20}} className='center'>&#xa9; Grant Phelps</p>
         </div>
         </div>
       </div>

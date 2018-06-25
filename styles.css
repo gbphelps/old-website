@@ -9,7 +9,7 @@ header{
   width: 300px;
   height: 70px;
   display:block;
-  background:#f44242;
+  background:#000;
   border-top:3px solid white;
   margin:auto;
   line-height: 65px;
@@ -18,90 +18,68 @@ header{
 /*//////////////////////////*/
 
 
-.description{
-  align-self:flex-end;
-  position: -webkit-sticky;
-  position:sticky;
-  bottom:0px;
-  border: none;
-  border-radius: 0;
-  color:white;
-  padding: 20px;
-  font-size: 16px;
-  text-align:justify;
-}
-
-.noteworthy .description{
-  background: #2dbe60;
-}
-
-.description-inner{
-  border: 1px solid white;
-  padding:10px;
-  border-radius: 3px;
+.screen{
+  position:absolute;
+  height:100%;
+  width:100%;
+  background:#000;
+  opacity:.3;
+  transition:1s;
 }
 
 
+h1, .button{
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align:center;
+  font-size: 30px;
+}
 
-
-
-
-
-
-
-
+.button{
+  font-size: 20px;
+}
 
 
 body{
-  font-family:'Fira Sans';
+  font-family:'Work Sans';
   padding:0;
   margin:0;
-  background:white;
+  background:black;
+  color:white;
 }
-
-
 
 html, body, #root, .container{
   height:100%;
   width:100%;
 }
 
-
-
 html{
   padding:0;
   margin:0;
-  min-width:322px;
+  min-width:400px;
 }
+
 a{
   text-decoration:none;
-  display:block
+  display:block;
+  color:white;
 }
-p{ text-align:justify; }
+
 img{ width:100%; }
 *{ box-sizing: border-box; }
 
 h1{
   margin:0;
   padding:0;
-  font-family:'Open Sans';
-  text-transform:uppercase;
-  text-align:center;
   margin-bottom:10px;
-  font-size: 31px;
 }
+
 
 ul, li{
   list-style: none;
   padding: 0;
 }
 
-
-.pane{
-  padding:0;
-  height: 100%;
-  display:flex;
-}
 
 /*/////////////////////////*/
 .feature{
@@ -111,11 +89,12 @@ ul, li{
   background-repeat:no-repeat;
   background-attachment: fixed;
   background-position: center;
+  margin: 20px;
+  min-height: 800px;
 }
 
 .mobile{
   background-attachment:scroll;
-  height: 800px;
   background-size: auto 100%;
 }
 
@@ -125,53 +104,18 @@ ul, li{
 
 .center { text-align:center }
 
-
-
-
-.button{
-  width: 200px;
-  background:white;
-  font-family: 'Open Sans';
-  margin:auto;
-
-  color:black;
-  text-align: center;
-  padding:10px;
-
-  text-transform:uppercase;
-  border-radius:4px;
-  cursor: pointer;
-}
-
-.dramamine .button { color:#7ec0ee }
-.chess .button { color: #c9c3c3 }
-.perlin .button { color: black }
-.noteworthy .button { color: #2dbe60; background:white}
-
-
-.line{
+.line, .hoverline{
   width: 200px;
   height: 1px;
   border-bottom: 1px solid white;
   margin:auto;
+  transition: .7s;
 }
-.long{
-  width:400px;
-}
-
-
 
 .footer .button{
-  margin:10px auto;
-  color: #f44242
+  margin:auto;
+  padding: 20px;
 }
-
-
-
-
-
-
-
 
 .dramamine{
   background-image: url('./images/dramamine.png');
@@ -193,6 +137,9 @@ ul, li{
   background-image: url('./images/chesspieces.jpg');
   background-size:cover;
 }
+
+
+
 
 /*////////////////////////////////////*/
 
@@ -220,37 +167,11 @@ ul, li{
   font-size:20px;
 }
 
-.pane{
-  width: 380px;
-  height:100%;
-  position: absolute;
-}
-
-.right{
-  position:absolute;
-  right:0px;
-}
-
-
-
-h1{
-  font-family: 'Open Sans';
-  padding: 0;
-  margin: 0;
-  text-align:center;
-  font-size:35px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-
-
-
-
 .footer{
   display:flex;
   justify-content:space-between;
   max-width: 700px;
-  margin: 10px auto;
+  margin:  auto;
 }
 }
 
@@ -265,16 +186,92 @@ h1{
       margin: 10px;
     }
 
-    .pane {
-      position:relative;
-      top:0px;
-      margin:auto;
-    }
-
 }
 
 
 
-.closing, .intro { background: #f44242; z-index:1}
+.closing, .intro { background: #000; z-index:1}
 .intro, .closing { height: auto}
-.closing .description, .intro .description { border: none; position:relative; top:0px }
+
+
+
+
+
+.closing .description, .intro .description {
+  border: none;
+  position:relative;
+  top:0px;
+  margin:0;
+}
+
+
+.description{
+  border:none;
+  line-height:1.5;
+  text-align:center;
+  opacity: 0;
+  transition: .5s;
+  height: 400px;
+
+  position:fixed;
+  margin:auto;
+  width: 400px;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+
+
+
+.line{
+  width: 0;
+  opacity: 1;
+}
+
+.focus *{
+  opacity: 1;
+  z-index: 100;
+}
+
+
+.focus .screen {
+  opacity: .7;
+}
+
+.focus .line{
+  width: 200px;
+}
+
+
+
+.hidden{
+  display:none;
+}
+
+.closing .line, .intro .line{
+  width:200px;
+}
+
+
+
+a:hover .hoverline{
+  width: 100px;
+}
+
+a{
+  display:block;
+  padding:0;
+  margin:auto;
+}
+
+
+.hoverline{
+  width: 0;
+  transition: .7s;
+}
+
+.hidden{
+  display:none;
+}
