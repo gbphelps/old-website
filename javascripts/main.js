@@ -18,32 +18,26 @@ window.addEventListener('scroll', ()=>{
   }
 
   Array.from(document.getElementsByClassName('feature')).forEach((feature,i)=>{
-    console.log(heights);
-    console.log(window.innerHeight);
 
     if (scrollY >= heights[i] && y < heights[i]){
-      console.log(1, feature);
       feature.classList.add('focus');
       feature.children[1].classList.replace('hidden','animate');
       feature.style.zIndex = -1;
     }
 
     else if (scrollY >= heights[i+1] && y < heights[i+1]){
-      console.log(2, feature);
       feature.classList.remove('focus');
       feature.children[1].classList.replace('animate','hidden');
       feature.style.zIndex = 1;
     }
 
     else if (scrollY + window.innerHeight < heights[i+1] && y + window.innerHeight >= heights[i+1]){
-      console.log(3, feature);
       feature.classList.add('focus');
       feature.children[1].classList.replace('hidden', 'animate');
       feature.style.zIndex = -1;
     }
 
     else if (scrollY + window.innerHeight <= heights[i] && y + window.innerHeight > heights[i]){
-      console.log(4, feature);
       feature.classList.remove('focus');
       feature.children[1].classList.replace('animate','hidden');
       feature.style.zIndex = 1;
