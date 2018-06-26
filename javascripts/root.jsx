@@ -9,7 +9,7 @@ export const Root = () => {
 
 
       <div className='intro'>
-        <div style={{paddingTop:30}} className='headshot'><img src='./images/headshot.jpg'></img></div>
+        <div className='headshot'><img src='./images/headshot.jpg'></img></div>
 
         <div className='content'>
 
@@ -28,7 +28,7 @@ export const Root = () => {
           </div>
 
           <p className='center'>Creative Software Engineer</p>
-          <p style={{margin:0}} className='center'>gbphelps@aya.yale.edu</p>
+          <p style={{margin:0, paddingBottom: 30}} className='center'>gbphelps@aya.yale.edu</p>
 
         </header>
 

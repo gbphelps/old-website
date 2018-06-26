@@ -881,7 +881,7 @@ window.addEventListener('scroll', function () {
     var targetTop = margin;
     var targetBottom = window.innerHeight - margin;
 
-    if (top < targetTop - 50 && bottom > targetBottom) {
+    if (top < targetTop - 100 && bottom > targetBottom + 100) {
       feature.classList.add('focus');
     } else {
       feature.classList.remove('focus');
@@ -965,7 +965,7 @@ var Root = exports.Root = function Root() {
       { className: 'intro' },
       _react2.default.createElement(
         'div',
-        { style: { paddingTop: 30 }, className: 'headshot' },
+        { className: 'headshot' },
         _react2.default.createElement('img', { src: './images/headshot.jpg' })
       ),
       _react2.default.createElement(
@@ -998,7 +998,7 @@ var Root = exports.Root = function Root() {
           ),
           _react2.default.createElement(
             'p',
-            { style: { margin: 0 }, className: 'center' },
+            { style: { margin: 0, paddingBottom: 30 }, className: 'center' },
             'gbphelps@aya.yale.edu'
           )
         )

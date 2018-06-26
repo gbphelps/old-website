@@ -15,7 +15,7 @@ window.addEventListener('scroll', ()=>{
     const targetTop = margin;
     const targetBottom = window.innerHeight - margin;
 
-    if (top < targetTop - 50 && bottom > targetBottom ){
+    if (top < targetTop - 100 && bottom > targetBottom + 100){
       feature.classList.add('focus');
     }else{
       feature.classList.remove('focus');
