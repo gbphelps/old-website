@@ -4,24 +4,51 @@ import ReactDOM from 'react-dom';
 
 
 
-let y = 0;
+let y = null;
+let features;
+let heights = [];
+
+
 window.addEventListener('scroll', ()=>{
-  Array.from(document.getElementsByClassName('feature')).forEach(feature=>{
 
-    const top = feature.getBoundingClientRect().top;
-    const bottom = feature.getBoundingClientRect().bottom;
-    const margin = (window.innerHeight - 400)/2;
+  if (y === null){
+    y = scrollY;
+    return;
+  }
+  
+  Array.from(document.getElementsByClassName('feature')).forEach((feature,i)=>{
 
-    const targetTop = margin;
-    const targetBottom = window.innerHeight - margin;
-
-    if (top < targetTop - 100 && bottom > targetBottom + 100){
+    if (scrollY >= heights[i] && y < heights[i]){
+      console.log(1, feature);
       feature.classList.add('focus');
-    }else{
+      feature.children[1].classList.replace('hidden','animate');
+      feature.style.zIndex = -1;
+    }
+
+    else if (scrollY >= heights[i+1] && y < heights[i+1]){
+      console.log(2, feature);
       feature.classList.remove('focus');
+      feature.children[1].classList.replace('animate','hidden');
+      feature.style.zIndex = 1;
+    }
+
+    else if (scrollY < heights[i] && y >= heights[i]){
+      console.log(3, feature);
+      feature.classList.add('focus');
+      feature.children[1].classList.replace('hidden', 'animate');
+      feature.style.zIndex = -1;
+    }
+
+    else if (scrollY <= heights[i-1] && y > heights[i-1]){
+      console.log(4, feature);
+      feature.classList.remove('focus');
+      feature.children[1].classList.replace('animate','hidden');
+      feature.style.zIndex = 1;
     }
   });
+  y = scrollY;
 })
+
 // let y = 0;
 // let pointer;
 // window.addEventListener('scroll', ()=>{
@@ -57,9 +84,17 @@ const mobile = function() {
   return check;
 };
 
+
 document.addEventListener('DOMContentLoaded', ()=>{
   const root = document.getElementById('root');
-  ReactDOM.render(<Root />, root);
-  if (mobile()) Array.from(document.getElementsByClassName('feature'))
-    .forEach(feature => feature.classList.add('mobile'))
+  ReactDOM.render(<Root mobile={mobile()}/>, root,()=>{
+
+    const start = document.body.getBoundingClientRect().top;
+    features = Array.from(document.getElementsByClassName('feature'));
+
+    features.forEach(feature=>{
+      heights.push(feature.getBoundingClientRect().top - start)
+    });
+    heights.push(features[features.length-1].getBoundingClientRect().bottom - start)
+  });
 })

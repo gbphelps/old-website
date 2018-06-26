@@ -92,11 +92,11 @@ ul, li{
   background-repeat:no-repeat;
   background-attachment: fixed;
   background-position: center;
-  margin: 20px;
+  /*margin: 20px;*/
   min-height: 800px;
 }
 
-.mobile{
+.mobile .feature{
   background-attachment:scroll;
   background-size: auto 100%;
 }
@@ -212,8 +212,6 @@ ul, li{
   border:none;
   line-height:1.5;
   text-align:center;
-  opacity: 0;
-  visibility: hidden;
   transition: .5s;
   height: 400px;
 
@@ -225,31 +223,6 @@ ul, li{
   left:0;
   right:0;
 }
-
-
-
-
-.line{
-  width: 0;
-  opacity: 1;
-}
-
-.focus *{
-  opacity: 1;
-  z-index: 100;
-  visibility: visible;
-}
-
-
-.focus .screen {
-  opacity: .7;
-}
-
-.focus .line{
-  width: 200px;
-}
-
-
 
 .hidden{
   display:none;
@@ -279,4 +252,29 @@ a{
 
 .hidden{
   display:none;
+}
+
+.animate{
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.animate .line{
+  animation-name: growLine;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn{
+  0%{opacity:0};
+  100%{opacity:1}
+}
+
+@keyframes growLine{
+  0%{width:0};
+  100%{width:200px};
+}
+
+
+.focus .screen{
+  opacity: .5;
 }

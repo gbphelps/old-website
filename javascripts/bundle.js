@@ -870,24 +870,44 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var y = 0;
+var y = null;
+var features = void 0;
+var heights = [];
+
 window.addEventListener('scroll', function () {
-  Array.from(document.getElementsByClassName('feature')).forEach(function (feature) {
 
-    var top = feature.getBoundingClientRect().top;
-    var bottom = feature.getBoundingClientRect().bottom;
-    var margin = (window.innerHeight - 400) / 2;
+  if (y === null) {
+    y = scrollY;
+    return;
+  }
 
-    var targetTop = margin;
-    var targetBottom = window.innerHeight - margin;
+  Array.from(document.getElementsByClassName('feature')).forEach(function (feature, i) {
 
-    if (top < targetTop - 100 && bottom > targetBottom + 100) {
+    if (scrollY >= heights[i] && y < heights[i]) {
+      console.log(1, feature);
       feature.classList.add('focus');
-    } else {
+      feature.children[1].classList.replace('hidden', 'animate');
+      feature.style.zIndex = -1;
+    } else if (scrollY >= heights[i + 1] && y < heights[i + 1]) {
+      console.log(2, feature);
       feature.classList.remove('focus');
+      feature.children[1].classList.replace('animate', 'hidden');
+      feature.style.zIndex = 1;
+    } else if (scrollY < heights[i] && y >= heights[i]) {
+      console.log(3, feature);
+      feature.classList.add('focus');
+      feature.children[1].classList.replace('hidden', 'animate');
+      feature.style.zIndex = -1;
+    } else if (scrollY <= heights[i - 1] && y > heights[i - 1]) {
+      console.log(4, feature);
+      feature.classList.remove('focus');
+      feature.children[1].classList.replace('animate', 'hidden');
+      feature.style.zIndex = 1;
     }
   });
+  y = scrollY;
 });
+
 // let y = 0;
 // let pointer;
 // window.addEventListener('scroll', ()=>{
@@ -926,9 +946,15 @@ var mobile = function mobile() {
 
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
-  _reactDom2.default.render(_react2.default.createElement(_root.Root, null), root);
-  if (mobile()) Array.from(document.getElementsByClassName('feature')).forEach(function (feature) {
-    return feature.classList.add('mobile');
+  _reactDom2.default.render(_react2.default.createElement(_root.Root, { mobile: mobile() }), root, function () {
+
+    var start = document.body.getBoundingClientRect().top;
+    features = Array.from(document.getElementsByClassName('feature'));
+
+    features.forEach(function (feature) {
+      heights.push(feature.getBoundingClientRect().top - start);
+    });
+    heights.push(features[features.length - 1].getBoundingClientRect().bottom - start);
   });
 });
 
@@ -956,10 +982,12 @@ var _link = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Root = exports.Root = function Root() {
+var Root = exports.Root = function Root(_ref) {
+  var mobile = _ref.mobile;
+
   return _react2.default.createElement(
     'div',
-    { className: 'container' },
+    { className: 'container' + (mobile ? ' mobile' : '') },
     _react2.default.createElement(
       'div',
       { className: 'intro' },
@@ -2665,7 +2693,7 @@ var Feature = function (_React$Component) {
         _react2.default.createElement('div', { className: 'screen' }),
         _react2.default.createElement(
           'div',
-          { className: 'description' },
+          { className: 'description hidden' },
           _react2.default.createElement(
             'h1',
             null,

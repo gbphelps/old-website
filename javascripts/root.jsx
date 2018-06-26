@@ -2,9 +2,9 @@ import React from 'react';
 import Feature from './components/feature';
 import { Link } from './components/link';
 
-export const Root = () => {
+export const Root = ({mobile}) => {
   return (
-    <div className='container'>
+    <div className={`container${mobile ? ' mobile' : ''}`}>
 
 
 

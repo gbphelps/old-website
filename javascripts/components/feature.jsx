@@ -18,7 +18,7 @@ export default class Feature extends React.Component{
     return(
       <div className={`feature ${this.props.feature}`}>
         <div className='screen'/>
-          <div className='description'>
+          <div className='description hidden'>
             <h1>{this.props.title}</h1>
             <div className='line'></div>
             <p className='description-body'>{this.props.body}</p>
