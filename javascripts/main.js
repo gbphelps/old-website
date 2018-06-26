@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 let y = null;
 let features;
 let heights = [];
+let start;
 
 
 window.addEventListener('scroll', ()=>{
@@ -15,8 +16,10 @@ window.addEventListener('scroll', ()=>{
     y = scrollY;
     return;
   }
-  
+
   Array.from(document.getElementsByClassName('feature')).forEach((feature,i)=>{
+    console.log(heights);
+    console.log(window.innerHeight);
 
     if (scrollY >= heights[i] && y < heights[i]){
       console.log(1, feature);
@@ -32,14 +35,14 @@ window.addEventListener('scroll', ()=>{
       feature.style.zIndex = 1;
     }
 
-    else if (scrollY < heights[i] && y >= heights[i]){
+    else if (scrollY + window.innerHeight < heights[i+1] && y + window.innerHeight >= heights[i+1]){
       console.log(3, feature);
       feature.classList.add('focus');
       feature.children[1].classList.replace('hidden', 'animate');
       feature.style.zIndex = -1;
     }
 
-    else if (scrollY <= heights[i-1] && y > heights[i-1]){
+    else if (scrollY + window.innerHeight <= heights[i] && y + window.innerHeight > heights[i]){
       console.log(4, feature);
       feature.classList.remove('focus');
       feature.children[1].classList.replace('animate','hidden');
@@ -89,7 +92,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const root = document.getElementById('root');
   ReactDOM.render(<Root mobile={mobile()}/>, root,()=>{
 
-    const start = document.body.getBoundingClientRect().top;
+    start = document.body.getBoundingClientRect().top;
     features = Array.from(document.getElementsByClassName('feature'));
 
     features.forEach(feature=>{
@@ -97,4 +100,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
     heights.push(features[features.length-1].getBoundingClientRect().bottom - start)
   });
+})
+
+window.addEventListener('resize',()=>{
+  heights = [];
+  start = document.body.getBoundingClientRect().top;
+  features.forEach(feature=>{
+    heights.push(feature.getBoundingClientRect().top - start)
+  });
+  heights.push(features[features.length-1].getBoundingClientRect().bottom - start);
 })

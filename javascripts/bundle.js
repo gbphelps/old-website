@@ -873,6 +873,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var y = null;
 var features = void 0;
 var heights = [];
+var start = void 0;
 
 window.addEventListener('scroll', function () {
 
@@ -882,6 +883,8 @@ window.addEventListener('scroll', function () {
   }
 
   Array.from(document.getElementsByClassName('feature')).forEach(function (feature, i) {
+    console.log(heights);
+    console.log(window.innerHeight);
 
     if (scrollY >= heights[i] && y < heights[i]) {
       console.log(1, feature);
@@ -893,12 +896,12 @@ window.addEventListener('scroll', function () {
       feature.classList.remove('focus');
       feature.children[1].classList.replace('animate', 'hidden');
       feature.style.zIndex = 1;
-    } else if (scrollY < heights[i] && y >= heights[i]) {
+    } else if (scrollY + window.innerHeight < heights[i + 1] && y + window.innerHeight >= heights[i + 1]) {
       console.log(3, feature);
       feature.classList.add('focus');
       feature.children[1].classList.replace('hidden', 'animate');
       feature.style.zIndex = -1;
-    } else if (scrollY <= heights[i - 1] && y > heights[i - 1]) {
+    } else if (scrollY + window.innerHeight <= heights[i] && y + window.innerHeight > heights[i]) {
       console.log(4, feature);
       feature.classList.remove('focus');
       feature.children[1].classList.replace('animate', 'hidden');
@@ -948,7 +951,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root.Root, { mobile: mobile() }), root, function () {
 
-    var start = document.body.getBoundingClientRect().top;
+    start = document.body.getBoundingClientRect().top;
     features = Array.from(document.getElementsByClassName('feature'));
 
     features.forEach(function (feature) {
@@ -956,6 +959,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     heights.push(features[features.length - 1].getBoundingClientRect().bottom - start);
   });
+});
+
+window.addEventListener('resize', function () {
+  heights = [];
+  start = document.body.getBoundingClientRect().top;
+  features.forEach(function (feature) {
+    heights.push(feature.getBoundingClientRect().top - start);
+  });
+  heights.push(features[features.length - 1].getBoundingClientRect().bottom - start);
 });
 
 /***/ }),
