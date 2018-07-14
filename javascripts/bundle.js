@@ -2811,29 +2811,20 @@ var Intro = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'bio', style: { zIndex: -1 } },
+          marquee[this.state.active],
           _react2.default.createElement(
             'div',
-            { className: 'current', key: this.state.active },
-            marquee[this.state.active]
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'prev', key: this.state.prev },
-            marquee[this.state.prev]
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'slide-selector', style: { position: 'relative', zIndex: 10000 } },
-          this.option('bio'),
-          this.option('edu'),
-          this.option('skills'),
-          _react2.default.createElement(
-            'div',
-            { style: { marginTop: -7, cursor: 'pointer' }, onClick: function onClick() {
-                return _this3.setState({ about: false });
-              } },
-            '\xD7'
+            { className: 'slide-selector', style: { position: 'relative' } },
+            this.option('bio'),
+            this.option('edu'),
+            this.option('skills'),
+            _react2.default.createElement(
+              'div',
+              { style: { marginTop: -7, cursor: 'pointer' }, onClick: function onClick() {
+                  return _this3.setState({ about: false });
+                } },
+              '\xD7'
+            )
           )
         ),
         _react2.default.createElement(
