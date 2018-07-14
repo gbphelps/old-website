@@ -1031,6 +1031,16 @@ var Root = exports.Root = function Root(_ref) {
       body: 'SIMUL8R is an interactive particle simulation in HTML5 Canvas. Using Perlin noise, a mesh of random force vectors is mapped onto a 2D plane, and instantaneous force is calculated using a weighted four-way averaging technique called bilinear interpolation. This model can plot over 2,000 particles in real time.'
     }),
     _react2.default.createElement(_feature2.default, {
+      feature: 'cal',
+      side: 'left',
+      title: 'cal9000',
+      button: {
+        text: 'go to site',
+        url: 'http://cal9000.herokuapp.com/#/'
+      },
+      body: 'An app for scheduling events. A popup modal contains a custom form for selecting start and end dates, with real-time input validation for start and end times. Multi-day events spill over into the next day and are optimally re-organized on the calendar each time an event is added. Popups appear next to mouse to provide event details when hovering over a specific event.'
+    }),
+    _react2.default.createElement(_feature2.default, {
       feature: 'chess',
       side: 'left',
       title: 'console chess',
@@ -2773,7 +2783,8 @@ var Intro = function (_React$Component) {
 
     _this.state = {
       about: false,
-      active: 'bio'
+      active: 'bio',
+      prev: null
     };
     return _this;
   }
@@ -2786,7 +2797,7 @@ var Intro = function (_React$Component) {
       return _react2.default.createElement('div', {
         className: 'option' + (this.state.active === choice ? ' active' : ''),
         onClick: function onClick() {
-          return _this2.setState({ active: choice });
+          return _this2.setState({ prev: _this2.state.active, active: choice });
         } });
     }
   }, {
@@ -2800,20 +2811,29 @@ var Intro = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'bio', style: { zIndex: -1 } },
-          marquee[this.state.active],
           _react2.default.createElement(
             'div',
-            { className: 'slide-selector', style: { position: 'relative' } },
-            this.option('bio'),
-            this.option('edu'),
-            this.option('skills'),
-            _react2.default.createElement(
-              'div',
-              { style: { marginTop: -7, cursor: 'pointer' }, onClick: function onClick() {
-                  return _this3.setState({ about: false });
-                } },
-              '\xD7'
-            )
+            { className: 'current', key: this.state.active },
+            marquee[this.state.active]
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'prev', key: this.state.prev },
+            marquee[this.state.prev]
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'slide-selector', style: { position: 'relative', zIndex: 10000 } },
+          this.option('bio'),
+          this.option('edu'),
+          this.option('skills'),
+          _react2.default.createElement(
+            'div',
+            { style: { marginTop: -7, cursor: 'pointer' }, onClick: function onClick() {
+                return _this3.setState({ about: false });
+              } },
+            '\xD7'
           )
         ),
         _react2.default.createElement(

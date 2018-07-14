@@ -8,7 +8,7 @@ export const Root = ({mobile}) => {
     <div className={`container${mobile ? ' mobile' : ''}`}>
 
       <Intro/>
-      
+
       <Feature
         feature='dramamine'
         side='right'
@@ -51,6 +51,25 @@ export const Root = ({mobile}) => {
         and instantaneous force is calculated using a weighted four-way averaging technique called
         bilinear interpolation. This model can plot over 2,000 particles in real time.'
       />
+
+
+
+      <Feature
+        feature='cal'
+        side='left'
+        title='cal9000'
+        button={{
+          text: 'go to site',
+          url: 'http://cal9000.herokuapp.com/#/'
+        }}
+        body='An app for scheduling events. A popup modal contains
+        a custom form for selecting start and end dates, with real-time input
+        validation for start and end times. Multi-day events spill over into the
+        next day and are optimally re-organized on the calendar each time an event
+        is added. Popups appear next to mouse to provide event details when hovering
+        over a specific event.'
+      />
+
 
       <Feature
         feature='chess'
