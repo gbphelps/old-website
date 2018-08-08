@@ -180,10 +180,7 @@ ul, li{
   background-size:cover;
 }
 
-.cal{
-  background-image: url('./images/cal9000.png');
-  background-size:cover;
-}
+
 
 
 /*////////////////////////////////////*/
@@ -368,33 +365,6 @@ a{
   min-width: 600px;
 }
 
-.current{
-  top:0px;
-  width:500px;
-  position:absolute;
-  animation-name: slideIn;
-  animation-duration: 1s;
-}
+@media (max-width: 420px){
 
-.prev{
-  top:0px;
-  width:500px;
-  position:absolute;
-  animation-name: slideOut;
-  animation-duration: 1s;
-  left:-500px;
-  visibility:hidden;
-  transition:1s;
-  opacity:0;
-}
-
-
-@keyframes slideIn{
-  0%{left: 500px}
-  100%{left:0px}
-}
-
-@keyframes slideOut{
-  0%{left: 0px}
-  100%{left:-500px}
 }
