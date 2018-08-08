@@ -1,1 +1,42 @@
+@media (max-width: 420px){
 
+
+
+/*//////////////////////*/
+
+.description{
+  width:100%;
+  padding: 20px;
+}
+
+
+/*//////////////////////*/
+
+.footer{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  margin:auto;
+}
+
+.feature{
+  margin: 0;
+}
+
+
+/*//////////////////////*/
+
+.screenshot { display:none; }
+
+
+
+
+
+/*//////////////////////*/
+
+
+
+
+
+
+}

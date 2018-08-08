@@ -565,36 +565,6 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Link = undefined;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Link = exports.Link = function Link(_ref) {
-  var url = _ref.url,
-      text = _ref.text,
-      onClick = _ref.onClick;
-  return _react2.default.createElement(
-    'a',
-    { href: url, className: 'button', style: { width: 200, cursor: 'pointer' }, onClick: onClick },
-    text,
-    _react2.default.createElement('div', { className: 'hoverline' })
-  );
-};
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -656,6 +626,35 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Link = undefined;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = exports.Link = function Link(_ref) {
+  var url = _ref.url,
+      text = _ref.text;
+  return _react2.default.createElement(
+    'a',
+    { href: url, className: 'button', style: { width: 200 } },
+    text,
+    _react2.default.createElement('div', { className: 'hoverline' })
+  );
+};
 
 /***/ }),
 /* 9 */
@@ -825,7 +824,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(22);
+var isTextNode = __webpack_require__(21);
 
 /*eslint-disable no-bitwise */
 
@@ -865,7 +864,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(20);
+var _reactDom = __webpack_require__(19);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -985,11 +984,7 @@ var _feature = __webpack_require__(18);
 
 var _feature2 = _interopRequireDefault(_feature);
 
-var _link = __webpack_require__(7);
-
-var _intro = __webpack_require__(19);
-
-var _intro2 = _interopRequireDefault(_intro);
+var _link = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -999,7 +994,50 @@ var Root = exports.Root = function Root(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'container' + (mobile ? ' mobile' : '') },
-    _react2.default.createElement(_intro2.default, null),
+    _react2.default.createElement(
+      'div',
+      { className: 'intro' },
+      _react2.default.createElement(
+        'div',
+        { className: 'headshot' },
+        _react2.default.createElement('img', { src: './images/headshot.jpg' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'content' },
+        _react2.default.createElement(
+          'header',
+          null,
+          _react2.default.createElement(
+            'h1',
+            { className: 'name' },
+            'Grant Phelps'
+          ),
+          _react2.default.createElement('div', { className: 'line' }),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'div',
+              { className: 'footer' },
+              _react2.default.createElement(_link.Link, { url: 'https://github.com/gbphelps', text: 'Github' }),
+              _react2.default.createElement(_link.Link, { url: 'https://www.linkedin.com/in/gbphelps/', text: 'LinkedIn' }),
+              _react2.default.createElement(_link.Link, { url: './images/Resume.pdf', text: 'Resume' })
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'center' },
+            'Creative Software Engineer'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { margin: 0, paddingBottom: 30 }, className: 'center' },
+            'gbphelps@aya.yale.edu'
+          )
+        )
+      )
+    ),
     _react2.default.createElement(_feature2.default, {
       feature: 'dramamine',
       side: 'right',
@@ -1131,7 +1169,7 @@ var invariant = __webpack_require__(2);
 var emptyObject = __webpack_require__(5);
 var warning = __webpack_require__(6);
 var emptyFunction = __webpack_require__(3);
-var checkPropTypes = __webpack_require__(8);
+var checkPropTypes = __webpack_require__(7);
 
 // TODO: this is special because it gets imported during build.
 
@@ -2622,7 +2660,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _link = __webpack_require__(7);
+var _link = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2692,201 +2730,6 @@ exports.default = Feature;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _link = __webpack_require__(7);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var bio = _react2.default.createElement(
-  'div',
-  { className: 'slide animate', key: 'bio' },
-  _react2.default.createElement(
-    'h2',
-    null,
-    'Biography'
-  ),
-  'I\'m a Yale Mechanical Engineering grad and full-stack engineer with a passion for well-designed user interfaces. My projects incorporate interactive animations and well-designed forms to make web apps intuitive and more enjoyable to use. I\'m a former editor and avid connoisseur of sci fi novels\u2014 ask me for recommendations. Skills include React + Redux, Ruby on Rails, JavaScript, SQL, Git, and JQuery.'
-);
-
-var edu = _react2.default.createElement(
-  'div',
-  { className: 'slide animate', key: 'edu' },
-  _react2.default.createElement(
-    'h2',
-    null,
-    'Education'
-  ),
-  _react2.default.createElement('img', { src: './images/yale.png', style: { display: 'block', height: 'auto', width: 150, margin: '10px auto' } }),
-  _react2.default.createElement('img', { src: './images/aa.svg', style: { height: 'auto', width: 100, margin: 10 } })
-);
-
-var skills = _react2.default.createElement(
-  'div',
-  { className: 'slide animate', key: 'skills' },
-  _react2.default.createElement(
-    'h2',
-    null,
-    'Skills'
-  ),
-  _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement('img', { src: './images/react.png', style: { height: 'auto', width: 100, margin: 10 } }),
-    _react2.default.createElement('img', { src: './images/redux.png', style: { height: 'auto', width: 100, margin: 10 } }),
-    _react2.default.createElement('img', { src: './images/ruby.svg', style: { height: 'auto', width: 100, margin: 10 } })
-  ),
-  _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement('img', { src: './images/html5.svg', style: { height: 'auto', width: 100, margin: 10 } }),
-    _react2.default.createElement('img', { src: './images/css3.svg', style: { height: 'auto', width: 100, margin: 10 } }),
-    _react2.default.createElement('img', { src: './images/postgresql.svg', style: { height: 'auto', width: 100, margin: 10 } })
-  )
-);
-
-var marquee = { bio: bio, edu: edu, skills: skills };
-
-var Intro = function (_React$Component) {
-  _inherits(Intro, _React$Component);
-
-  function Intro(props) {
-    _classCallCheck(this, Intro);
-
-    var _this = _possibleConstructorReturn(this, (Intro.__proto__ || Object.getPrototypeOf(Intro)).call(this, props));
-
-    _this.state = {
-      about: false,
-      active: 'bio'
-    };
-    return _this;
-  }
-
-  _createClass(Intro, [{
-    key: 'option',
-    value: function option(choice) {
-      var _this2 = this;
-
-      return _react2.default.createElement('div', {
-        className: 'option' + (this.state.active === choice ? ' active' : ''),
-        onClick: function onClick() {
-          return _this2.setState({ active: choice });
-        } });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'intro' + (this.state.about ? ' about' : '') },
-        _react2.default.createElement(
-          'div',
-          { className: 'bio', style: { zIndex: -1 } },
-          marquee[this.state.active],
-          _react2.default.createElement(
-            'div',
-            { className: 'slide-selector', style: { position: 'relative' } },
-            this.option('bio'),
-            this.option('edu'),
-            this.option('skills'),
-            _react2.default.createElement(
-              'div',
-              { style: { marginTop: -7, cursor: 'pointer' }, onClick: function onClick() {
-                  return _this3.setState({ about: false });
-                } },
-              '\xD7'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'headshot', style: { position: 'relative' } },
-          _react2.default.createElement('img', { src: './images/headshot.jpg' })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'content' },
-          _react2.default.createElement(
-            'header',
-            { style: { height: 70 } },
-            _react2.default.createElement(
-              'div',
-              { className: 'banner' },
-              _react2.default.createElement(
-                'h1',
-                { className: 'name', style: { position: 'relative' } },
-                'Grant Phelps'
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'line', style: { position: 'relative' } },
-                _react2.default.createElement('div', { style: {
-                    height: 400,
-                    width: 500,
-                    background: 'black',
-                    position: 'absolute',
-                    top: 0,
-                    zIndex: -2
-                  } })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'footer' },
-              _react2.default.createElement(_link.Link, { url: 'https://github.com/gbphelps', text: 'Github' }),
-              _react2.default.createElement(_link.Link, { url: 'https://www.linkedin.com/in/gbphelps/', text: 'LinkedIn' }),
-              _react2.default.createElement(_link.Link, { url: './images/Resume.pdf', text: 'Resume' })
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'center' },
-              'Creative Software Engineer'
-            ),
-            _react2.default.createElement(
-              'p',
-              { style: { margin: 0, paddingBottom: 30 }, className: 'center' },
-              'gbphelps@aya.yale.edu'
-            ),
-            _react2.default.createElement(_link.Link, {
-              text: 'About',
-              onClick: function onClick() {
-                return _this3.setState({ about: true });
-              }
-            })
-          )
-        )
-      );
-    }
-  }]);
-
-  return Intro;
-}(_react2.default.Component);
-
-exports.default = Intro;
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 function checkDCE() {
@@ -2921,15 +2764,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(20);
 } else {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(23);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3174,7 +3017,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3189,7 +3032,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
  * @typechecks
  */
 
-var isNode = __webpack_require__(23);
+var isNode = __webpack_require__(22);
 
 /**
  * @param {*} object The object to check.
@@ -3202,7 +3045,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3230,7 +3073,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3257,13 +3100,13 @@ var warning = __webpack_require__(6);
 var ExecutionEnvironment = __webpack_require__(9);
 var _assign = __webpack_require__(4);
 var emptyFunction = __webpack_require__(3);
-var checkPropTypes = __webpack_require__(8);
+var checkPropTypes = __webpack_require__(7);
 var getActiveElement = __webpack_require__(10);
 var shallowEqual = __webpack_require__(11);
 var containsNode = __webpack_require__(12);
 var emptyObject = __webpack_require__(5);
-var hyphenateStyleName = __webpack_require__(25);
-var camelizeStyleName = __webpack_require__(27);
+var hyphenateStyleName = __webpack_require__(24);
+var camelizeStyleName = __webpack_require__(26);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -20544,7 +20387,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20559,7 +20402,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(26);
+var hyphenate = __webpack_require__(25);
 
 var msPattern = /^ms-/;
 
@@ -20586,7 +20429,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20622,7 +20465,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20637,7 +20480,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(28);
+var camelize = __webpack_require__(27);
 
 var msPattern = /^-ms-/;
 
@@ -20665,7 +20508,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

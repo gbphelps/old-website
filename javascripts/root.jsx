@@ -1,14 +1,43 @@
 import React from 'react';
 import Feature from './components/feature';
 import { Link } from './components/link';
-import Intro from './components/intro';
 
 export const Root = ({mobile}) => {
   return (
     <div className={`container${mobile ? ' mobile' : ''}`}>
 
-      <Intro/>
-      
+
+
+      <div className='intro'>
+        <div className='headshot'><img src='./images/headshot.jpg'></img></div>
+
+        <div className='content'>
+
+        <header>
+          <h1 className='name'>Grant Phelps</h1>
+          <div className='line'></div>
+
+          <div>
+
+            <div className='footer'>
+              <Link url='https://github.com/gbphelps' text='Github'/>
+              <Link url='https://www.linkedin.com/in/gbphelps/' text='LinkedIn'/>
+              <Link url='./images/Resume.pdf' text='Resume'/>
+            </div>
+
+          </div>
+
+          <p className='center'>Creative Software Engineer</p>
+          <p style={{margin:0, paddingBottom: 30}} className='center'>gbphelps@aya.yale.edu</p>
+
+        </header>
+
+        </div>
+      </div>
+
+
+
+
       <Feature
         feature='dramamine'
         side='right'
