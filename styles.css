@@ -122,13 +122,13 @@ ul, li{
 
 .dramamine{
   background-image: url('./images/dramamine.png');
-  background-color: #7ec0ee;
+  background-size: cover;
 }
 
 
 .perlin{
   background-image: url('./images/Perlin.png');
-  background-color: black;
+  background-size: cover;
 }
 
 .noteworthy{
@@ -138,10 +138,13 @@ ul, li{
 
 .chess{
   background-image: url('./images/chesspieces.jpg');
-  background-size:cover;
+  background-size: cover;
 }
 
-
+.cal{
+  background-image: url('./images/cal9000.png');
+  background-size: cover;
+}
 
 
 /*////////////////////////////////////*/
