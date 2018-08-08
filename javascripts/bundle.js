@@ -1038,7 +1038,7 @@ var Root = exports.Root = function Root(_ref) {
         text: 'go to site',
         url: 'http://cal9000.herokuapp.com/#/'
       },
-      body: 'A UI proof of concept for an event-scheduling app. A popup modal contains a custom form for selecting start and end dates, with real-time input validation for start and end times. Multi-day events spill over into the next day and are optimally re-organized on the calendar each time an event is added. Popups appear next to mouse to provide event details when hovering over a specific event.'
+      body: 'An app for scheduling events. A popup modal contains a custom form for selecting start and end dates, with real-time input validation for start and end times. Multi-day events spill over into the next day and are optimally re-organized on the calendar each time an event is added. Popups appear next to mouse to provide event details when hovering over a specific event.'
     }),
     _react2.default.createElement(_feature2.default, {
       feature: 'chess',
