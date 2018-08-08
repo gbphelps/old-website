@@ -64,14 +64,16 @@ export default class Intro extends React.Component{
       <div className={`intro${this.state.about ? ' about' : ''}`}>
         <div className='bio' style={{zIndex:-1}}>
 
-          {marquee[this.state.active]}
+          <div className='current' key={this.state.active}>{marquee[this.state.active]}</div>
+          <div className='prev' key={this.state.prev}>{marquee[this.state.prev]}</div>
 
-          <div className='slide-selector' style={{position:'relative'}}>
-            {this.option('bio')}
-            {this.option('edu')}
-            {this.option('skills')}
-            <div style={{marginTop:-7, cursor:'pointer'}} onClick={()=>this.setState({about:false})}>&#215;</div>
-          </div>
+        </div>
+
+        <div className='slide-selector' style={{position:'relative',zIndex:10000}}>
+          {this.option('bio')}
+          {this.option('edu')}
+          {this.option('skills')}
+          <div style={{marginTop:-7, cursor:'pointer'}} onClick={()=>this.setState({about:false})}>&#215;</div>
         </div>
 
 
