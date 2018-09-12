@@ -22,7 +22,7 @@ export const Root = ({mobile}) => {
             <div className='footer'>
               <Link url='https://github.com/gbphelps' text='Github'/>
               <Link url='https://www.linkedin.com/in/gbphelps/' text='LinkedIn'/>
-              <Link url='./images/Resume.pdf' text='Resume'/>
+              <Link url='./images/PhelpsResume.pdf' text='Resume'/>
             </div>
 
           </div>
@@ -98,7 +98,7 @@ export const Root = ({mobile}) => {
         over a specific event.'
       />
 
-  
+
       <Feature
         feature='chess'
         side='left'

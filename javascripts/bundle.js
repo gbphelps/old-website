@@ -1022,7 +1022,7 @@ var Root = exports.Root = function Root(_ref) {
               { className: 'footer' },
               _react2.default.createElement(_link.Link, { url: 'https://github.com/gbphelps', text: 'Github' }),
               _react2.default.createElement(_link.Link, { url: 'https://www.linkedin.com/in/gbphelps/', text: 'LinkedIn' }),
-              _react2.default.createElement(_link.Link, { url: './images/Resume.pdf', text: 'Resume' })
+              _react2.default.createElement(_link.Link, { url: './images/PhelpsResume.pdf', text: 'Resume' })
             )
           ),
           _react2.default.createElement(
