@@ -1044,7 +1044,7 @@ var Root = exports.Root = function Root(_ref) {
       title: 'Dramamine-3D',
       button: {
         text: 'Play it live!',
-        url: 'http://www.grant-phelps.com/dramamine-3d/'
+        url: 'https://www.grant-phelps.com/dramamine-3d/'
       },
       body: 'Dramamine-3D is a high-flying browser game built with THREE-js. The project features a randomly generated endless runner course, precise collision detection for irregular geometries, torque-based controls, and realistic acceleration with simulated air resistance.'
     }),
@@ -1064,7 +1064,7 @@ var Root = exports.Root = function Root(_ref) {
       title: 'color picker',
       button: {
         text: 'Pick a color!',
-        url: 'https://github.com/gbphelps/colorPicker'
+        url: 'https://www.grant-phelps.com/colorPicker'
       },
       body: 'Nested event callbacks simulate dragDrop events. Intuitive, glitch-free drag motion is provided with geometric algorithms in the triangle, lollipop, and circular slider callbacks. The conical gradient for the circle is coded by hand and applied to a buffer array of pixel data. The anti-aliasing algorithm to smooth the jagged pixel edges is also coded by hand. Coded entirely with vanilla javascript.'
     }),
@@ -1074,7 +1074,7 @@ var Root = exports.Root = function Root(_ref) {
       title: 'simul8r',
       button: {
         text: 'Generate!',
-        url: 'http://www.grant-phelps.com/SIMUL8R/'
+        url: 'https://www.grant-phelps.com/SIMUL8R/'
       },
       body: 'SIMUL8R is an interactive particle simulation in HTML5 Canvas. Using Perlin noise, a mesh of random force vectors is mapped onto a 2D plane, and instantaneous force is calculated using a weighted four-way averaging technique called bilinear interpolation. This model can plot over 2,000 particles in real time.'
     }),

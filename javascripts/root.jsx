@@ -44,7 +44,7 @@ export const Root = ({mobile}) => {
         title='Dramamine-3D'
         button={{
           text: 'Play it live!',
-          url: 'http://www.grant-phelps.com/dramamine-3d/'
+          url: 'https://www.grant-phelps.com/dramamine-3d/'
         }}
         body='Dramamine-3D is a high-flying browser game built with THREE-js.
         The project features a randomly generated endless runner course,
@@ -73,7 +73,7 @@ export const Root = ({mobile}) => {
         title='color picker'
         button={{
           text: 'Pick a color!',
-          url: 'https://github.com/gbphelps/colorPicker'
+          url: 'https://www.grant-phelps.com/colorPicker'
         }}
         body='Nested event callbacks simulate dragDrop events. Intuitive, glitch-free
         drag motion is provided with geometric algorithms in the triangle, lollipop, and circular slider
@@ -88,7 +88,7 @@ export const Root = ({mobile}) => {
         title='simul8r'
         button={{
           text: 'Generate!',
-          url: 'http://www.grant-phelps.com/SIMUL8R/'
+          url: 'https://www.grant-phelps.com/SIMUL8R/'
         }}
         body='SIMUL8R is an interactive particle simulation in HTML5 Canvas.
         Using Perlin noise, a mesh of random force vectors is mapped onto a 2D plane,
