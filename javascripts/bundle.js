@@ -2720,32 +2720,22 @@ var Feature = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'feature ' + this.props.feature },
-        _react2.default.createElement('div', null),
+        _react2.default.createElement('div', { className: 'screen' }),
         _react2.default.createElement(
           'div',
           { className: 'description hidden' },
           _react2.default.createElement(
-            'div',
-            { style: {
-                width: 400,
-                height: 400,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-              } },
-            _react2.default.createElement(
-              'h1',
-              null,
-              this.props.title
-            ),
-            _react2.default.createElement('div', { className: 'line' }),
-            _react2.default.createElement(
-              'p',
-              { className: 'description-body' },
-              this.props.body
-            ),
-            _react2.default.createElement(_link.Link, { url: this.props.button.url, text: this.props.button.text })
-          )
+            'h1',
+            null,
+            this.props.title
+          ),
+          _react2.default.createElement('div', { className: 'line' }),
+          _react2.default.createElement(
+            'p',
+            { className: 'description-body' },
+            this.props.body
+          ),
+          _react2.default.createElement(_link.Link, { url: this.props.button.url, text: this.props.button.text })
         )
       );
     }
