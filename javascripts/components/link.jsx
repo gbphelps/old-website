@@ -1,8 +1,10 @@
 import React from 'react';
 
 export const Link = ({url, text}) => (
-  <a href={url} className='button' style={{width:200}}>
+  <div style={{width: 200, display:'flex'}}>
+  <a href={url} className='button'>
     {text}
     <div className='hoverline'/>
   </a>
+  </div>
 )

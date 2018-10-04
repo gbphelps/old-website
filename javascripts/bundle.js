@@ -649,10 +649,14 @@ var Link = exports.Link = function Link(_ref) {
   var url = _ref.url,
       text = _ref.text;
   return _react2.default.createElement(
-    'a',
-    { href: url, className: 'button', style: { width: 200 } },
-    text,
-    _react2.default.createElement('div', { className: 'hoverline' })
+    'div',
+    { style: { width: 200, display: 'flex' } },
+    _react2.default.createElement(
+      'a',
+      { href: url, className: 'button' },
+      text,
+      _react2.default.createElement('div', { className: 'hoverline' })
+    )
   );
 };
 

@@ -64,7 +64,8 @@ html{
 
 a{
   text-decoration:none;
-  display:block;
+  display:flex;
+  flex-direction:column;
   color:white;
 }
 
@@ -230,6 +231,10 @@ ul, li{
   bottom:0;
   left:0;
   right:0;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .hidden{
@@ -243,7 +248,7 @@ ul, li{
 
 
 a:hover .hoverline{
-  width: 100px;
+  width: 100%;
 }
 
 a{
@@ -254,7 +259,7 @@ a{
 
 
 .hoverline{
-  width: 0;
+  width: 0%;
   transition: .7s;
 }
 
