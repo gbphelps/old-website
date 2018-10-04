@@ -146,6 +146,11 @@ ul, li{
   background-size: cover;
 }
 
+.colorPicker{
+  background-image: url('./images/colorPicker.png');
+  background-size:cover;
+}
+
 
 /*////////////////////////////////////*/
 

@@ -9,7 +9,7 @@ export const Root = ({mobile}) => {
 
 
       <div className='intro'>
-        <div className='headshot'><img src='./images/headshot.jpg'></img></div>
+        <div className='headshot'><img src='./images/portrait.jpg'></img></div>
 
         <div className='content'>
 
@@ -68,6 +68,21 @@ export const Root = ({mobile}) => {
       />
 
       <Feature
+        feature='colorPicker'
+        side='left'
+        title='color picker'
+        button={{
+          text: 'Pick a color!',
+          url: 'https://github.com/gbphelps/colorPicker'
+        }}
+        body='Nested event callbacks simulate dragDrop events. Intuitive, glitch-free
+        drag motion is provided with geometric algorithms in the triangle, lollipop, and circular slider
+        callbacks. The conical gradient for the circle is coded by hand and applied to a buffer array of pixel data.
+        The anti-aliasing algorithm to smooth the jagged pixel edges is also coded by hand. Coded
+        entirely with vanilla javascript.'
+      />
+
+      <Feature
         feature='perlin'
         side='right'
         title='simul8r'
@@ -97,7 +112,6 @@ export const Root = ({mobile}) => {
         is added. Popups appear next to mouse to provide event details when hovering
         over a specific event.'
       />
-
 
       <Feature
         feature='chess'

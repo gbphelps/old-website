@@ -1000,7 +1000,7 @@ var Root = exports.Root = function Root(_ref) {
       _react2.default.createElement(
         'div',
         { className: 'headshot' },
-        _react2.default.createElement('img', { src: './images/headshot.jpg' })
+        _react2.default.createElement('img', { src: './images/portrait.jpg' })
       ),
       _react2.default.createElement(
         'div',
@@ -1057,6 +1057,16 @@ var Root = exports.Root = function Root(_ref) {
         url: 'http://note-worthy.herokuapp.com/'
       },
       body: 'Noteworthy is a personal planner and note-taking app modeled after Evernote. Rich text editing is provided with the Quill.js library, and all formatting is persisted to the database with json objects. The site uses AWS to host user- uploaded images, which are fetched and inserted into the body of each note upon retrieval from the database.'
+    }),
+    _react2.default.createElement(_feature2.default, {
+      feature: 'colorPicker',
+      side: 'left',
+      title: 'color picker',
+      button: {
+        text: 'Pick a color!',
+        url: 'https://github.com/gbphelps/colorPicker'
+      },
+      body: 'Nested event callbacks simulate dragDrop events. Intuitive, glitch-free drag motion is provided with geometric algorithms in the triangle, lollipop, and circular slider callbacks. The conical gradient for the circle is coded by hand and applied to a buffer array of pixel data. The anti-aliasing algorithm to smooth the jagged pixel edges is also coded by hand. Coded entirely with vanilla javascript.'
     }),
     _react2.default.createElement(_feature2.default, {
       feature: 'perlin',
