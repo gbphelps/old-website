@@ -23,11 +23,15 @@ header{
 
 
 .screen{
-  position:absolute;
+  position:fixed;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
   height:100%;
   width:100%;
-  background:#000;
-  opacity:.1;
+  background: radial-gradient(black, rgba(0,0,0,.7));
+  opacity: 0;
   transition:1s;
 }
 
@@ -222,19 +226,21 @@ ul, li{
   line-height:1.5;
   text-align:center;
   transition: .5s;
-  height: 400px;
+  height: 100%;
+  width: 100%;
 
   position:fixed;
   margin:auto;
-  width: 400px;
   top:0;
   bottom:0;
   left:0;
   right:0;
+  background: radial-gradient(rgba(0,0,0,.7), rgba(0,0,0,.5));
 
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content: center;
 }
 
 .hidden{
@@ -289,5 +295,5 @@ a{
 
 
 .focus .screen{
-  opacity: .5;
+  opacity: .9
 }

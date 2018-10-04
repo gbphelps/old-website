@@ -17,12 +17,20 @@ export default class Feature extends React.Component{
   render(){
     return(
       <div className={`feature ${this.props.feature}`}>
-        <div className='screen'/>
+          <div/>
           <div className='description hidden'>
-            <h1>{this.props.title}</h1>
-            <div className='line'></div>
-            <p className='description-body'>{this.props.body}</p>
-            <Link url={this.props.button.url} text={this.props.button.text}/>
+            <div style={{
+                width:400,
+                height:400,
+                display:'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}>
+              <h1>{this.props.title}</h1>
+              <div className='line'></div>
+              <p className='description-body'>{this.props.body}</p>
+              <Link url={this.props.button.url} text={this.props.button.text}/>
+            </div>
           </div>
       </div>
     )
