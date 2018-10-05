@@ -192,6 +192,7 @@ ul, li{
     .footer{
       flex-direction:column;
       width:220px;
+      align-items: center;
     }
 
     .footer a{
