@@ -112,7 +112,7 @@ ul, li{
   width: 200px;
   height: 1px;
   border-bottom: 1px solid white;
-  margin:auto;
+  margin: 0 auto;
   transition: .7s;
 }
 
@@ -226,7 +226,7 @@ ul, li{
   height: 400px;
 
   position:fixed;
-  margin:auto;
+  margin: auto;
   width: 400px;
   top:0;
   bottom:0;
@@ -255,7 +255,7 @@ a:hover .hoverline{
 a{
   display:block;
   padding:0;
-  margin:auto;
+  margin: auto;
 }
 
 
