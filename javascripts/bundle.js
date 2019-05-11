@@ -1057,8 +1057,8 @@ var Root = exports.Root = function Root(_ref) {
       side: 'left',
       title: 'Noteworthy',
       button: {
-        text: 'Go to site',
-        url: 'http://note-worthy.herokuapp.com/'
+        text: 'github repo',
+        url: 'https://github.com/gbphelps/noteWorthy'
       },
       body: 'Noteworthy is a personal planner and note-taking app modeled after Evernote. Rich text editing is provided with the Quill.js library, and all formatting is persisted to the database with json objects. The site uses AWS to host user- uploaded images, which are fetched and inserted into the body of each note upon retrieval from the database.'
     }),
