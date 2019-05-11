@@ -57,8 +57,8 @@ export const Root = ({mobile}) => {
         side='left'
         title='Noteworthy'
         button={{
-          text: 'Go to site',
-          url: 'http://note-worthy.herokuapp.com/'
+          text: 'github repo',
+          url: 'https://github.com/gbphelps/noteWorthy'
         }}
         body='Noteworthy is a personal planner and note-taking app modeled after Evernote.
         Rich text editing is provided with the Quill.js library, and all formatting is
