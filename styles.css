@@ -148,6 +148,11 @@ ul, li{
   background-size: cover;
 }
 
+.bezier{
+  background-image: url('./images/bezier.png');
+  background-size:cover;
+}
+
 .colorPicker{
   background-image: url('./images/colorPicker.png');
   background-size:cover;

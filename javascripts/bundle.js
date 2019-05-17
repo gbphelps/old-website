@@ -1063,6 +1063,16 @@ var Root = exports.Root = function Root(_ref) {
       body: 'Noteworthy is a personal planner and note-taking app modeled after Evernote. Rich text editing is provided with the Quill.js library, and all formatting is persisted to the database with json objects. The site uses AWS to host user- uploaded images, which are fetched and inserted into the body of each note upon retrieval from the database.'
     }),
     _react2.default.createElement(_feature2.default, {
+      feature: 'bezier',
+      side: 'left',
+      title: 'Bezier Builder',
+      button: {
+        text: 'Generate',
+        url: 'https://www.grant-phelps.com/bezierBuilder'
+      },
+      body: 'Bezier curves are part of the bedrock of computer graphics. They can be built with any number of points, and result from recursively parametrizing distances between neighboring vertices until a single point is returned for each value of parameter t. I built this visualization to make it easier to intuit how a collection of N points becomes an Nth order Bezier curve.'
+    }),
+    _react2.default.createElement(_feature2.default, {
       feature: 'colorPicker',
       side: 'left',
       title: 'color picker',

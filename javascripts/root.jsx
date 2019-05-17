@@ -67,6 +67,21 @@ export const Root = ({mobile}) => {
         retrieval from the database.'
       />
 
+
+      <Feature
+        feature='bezier'
+        side='left'
+        title='Bezier Builder'
+        button={{
+          text: 'Generate',
+          url: 'https://www.grant-phelps.com/BezierBuilder'
+        }}
+        body='Bezier curves are part of the bedrock of computer graphics. They can be built with
+        any number of points, and result from recursively parametrizing distances between neighboring
+        vertices until a single point is returned for each value of parameter t. I built this visualization
+        to make it easier to intuit how a collection of N points becomes an Nth order Bezier curve.'
+      />
+
       <Feature
         feature='colorPicker'
         side='left'
