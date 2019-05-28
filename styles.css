@@ -94,6 +94,7 @@ ul, li{
   background-repeat:no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-color: black;
   /*margin: 20px;*/
   min-height: 800px;
 }
