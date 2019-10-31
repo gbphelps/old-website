@@ -53,6 +53,18 @@ export const Root = ({mobile}) => {
       />
 
       <Feature
+        feature='rubiks'
+        side='left'
+        title="Rubiks' Cube"
+        button={{
+          text: 'Play game',
+          url: 'https://www.grant-phelps.com/rubiks'
+        }}
+        body="A nostalgic rendition of the 80s classic. 2D screen coordinates are reverse-mapped into 3D space to provide you with intuitive controls. Drag one of the eight corner squares to move a single face. Drag any other square to rotate the whole cube."
+      />
+
+
+      <Feature
         feature='noteworthy'
         side='left'
         title='Noteworthy'
@@ -127,21 +139,6 @@ export const Root = ({mobile}) => {
         is added. Popups appear next to mouse to provide event details when hovering
         over a specific event.'
       />
-
-      <Feature
-        feature='chess'
-        side='left'
-        title='console chess'
-        button={{
-          text: 'github repo',
-          url: 'https://github.com/gbphelps/console_chess'
-        }}
-        body='A nostalgic rendition of the age-old classic. This version uses UTF-8 chess
-        pieces and font colorization provided by the Colorize gem to construct a believable
-        chess board out of command line output. Arrow key controls and responsive square
-        highlighting evoke a retro user experience.'
-      />
-
 
       <div className='closing'>
         <div className='content'>
